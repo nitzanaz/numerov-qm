@@ -1,0 +1,11 @@
+.venv/
+venv/
+*.png
+*.pdf
+*.svg
+*.npy
+*.npz
+*.mat
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
