@@ -19,7 +19,7 @@ def numerov_matrices(R, K, l,potential="harmonic",Z=1.0):
     b =  1.0 / (dr**2)
 
     for k in range(Np):
-        H[k, k] = b + (10.0 / 12.0) * W[k]
+        H[k, k] = b + (10.0 / 12.0) * (dr**2) * W[k]
         Nmat[k, k] = 10.0 / 12.0
 
         if k > 0:
@@ -41,8 +41,9 @@ def solve_numerov( R, K, l,n_states=5, potential="harmonic", Z=1.0,verbose=True)
     )
     energies, eigenvectors = eigh(H, Nmat)
 
-    energies = energies[:n_states]
-    eigenvectors = eigenvectors[:, :n_states]
+    # part of Q.5 
+    # energies = energies[:n_states]
+    # eigenvectors = eigenvectors[:, :n_states]
 
     if verbose:
         print("="*60)

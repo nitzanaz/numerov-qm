@@ -57,8 +57,9 @@ def solve_finite_difference( R, K, l, n_states=5,potential="harmonic",Z=1.0,verb
     # eigh returns eigenvalues in ascending order
     energies, eigenvectors = eigh(H)
 
-    energies = energies[:n_states]
-    eigenvectors = eigenvectors[:, :n_states]
+    #- solve Q:5
+    # energies = energies[:n_states]
+    # eigenvectors = eigenvectors[:, :n_states]
 
     if verbose:
         print("="*60)
